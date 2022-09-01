@@ -1,5 +1,5 @@
 {
-  "homepage": "https://minaarac.github.io/Myliba",
+  "homepage": "https://Minaarac.github.io/Myliba",
   "name": "person-example",
   "version": "0.0.0",
   "scripts": {
@@ -9,8 +9,8 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "predeploy":"npm run build",
-    "deploy":"gh-pages -d build"
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "private": true,
   "dependencies": {
