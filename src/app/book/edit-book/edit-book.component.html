@@ -1,0 +1,30 @@
+<h1>
+    {{message}}
+    <!--Mesaja göre ekleme ya da add old. gösteriyor. -->
+</h1>
+<div class="container my-4">
+    <label> Id</label>
+    <input class="form-control" type="text" [(ngModel)]="id" placeholder="ID" aria-label="Disabled input example"
+        disabled>
+    <br>
+    <label> Name</label>
+    <input class="form-control form-control-sm" type="text" [(ngModel)]="book.name" placeholder="NAME"
+        aria-label=".form-control-sm example">
+    <br>
+    <label> Subject</label>
+    <input class="form-control form-control-sm" type="text" [(ngModel)]="book.subject" placeholder="SUBJECT"
+        aria-label=".form-control-sm example">
+    <br>
+    <label> Author</label>
+    <input class="form-control form-control-sm" type="text" [(ngModel)]="book.author" placeholder="AUTHOR"
+        aria-label=".form-control-sm example">
+    <br>
+    <label> Publisher</label>
+    <input class="form-control form-control-sm" type="text" [(ngModel)]="book.publisher" placeholder="PUBLISHER"
+        aria-label=".form-control-sm example">
+    <br>
+    <button class=" nes-btn is-success" (click)="addOrUpdateBook(book)">
+        Save
+    </button>
+</div>
+<ngx-loading [show]="loading" [config]="{ backdropBorderRadius: '3px' }"></ngx-loading>

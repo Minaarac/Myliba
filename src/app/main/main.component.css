@@ -1,0 +1,30 @@
+#bg {
+    position: fixed;
+    top: -40%;
+    left: -50%;
+    width: 199%;
+    height: 199%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center center;
+  }
+  
+  #bg img {
+    position: absolute;
+    top: 0;
+    left: 20%;
+    right: 20%;
+    bottom:0;
+    margin: auto;
+    min-width: 50%;
+    min-height: 50%;
+  }
+  
+  #button-position{
+    position: absolute;
+    left: 40%;
+    right: 40%;
+    top: 50%;
+    opacity: 0.9;
+  }

@@ -1,0 +1,7 @@
+#p {
+    font-size: 2rem;
+}
+
+#p::first-letter{
+    font-size: 4rem;
+}

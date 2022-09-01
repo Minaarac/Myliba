@@ -1,0 +1,48 @@
+<h2 class="text-center"> {{book.name +' - ' + book.author}} </h2>
+<br>
+<button class=" nes-btn" routerLink="/edit-book/{{book.id}}">
+    Edit
+</button>
+<br>
+<div class="container text-center">
+    <div class="row">
+        <div class="col fw-bold">
+            Id
+        </div>
+        <div class="col">
+            {{book.id}}
+        </div>
+    </div>
+    <hr>
+
+    <div class="row">
+        <div class="col fw-bold">
+            Name
+        </div>
+        <div class="col">
+            {{book.name}}
+        </div>
+    </div>
+    <hr>
+
+    <div class="row">
+        <div class="col fw-bold">
+            Subject
+        </div>
+        <div class="col">
+            {{book.subject}}
+        </div>
+    </div>
+    <hr>
+
+    <div class="row">
+        <div class="col fw-bold">
+            Author
+        </div>
+        <div class="col">
+            {{book.author}}
+        </div>
+    </div>
+    <hr>
+</div>
+<ngx-loading [show]="loading" [config]="{ backdropBorderRadius: '3px' }"></ngx-loading>

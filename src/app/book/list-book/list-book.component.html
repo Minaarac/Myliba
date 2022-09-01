@@ -1,0 +1,45 @@
+<h2 id="p" class="text-center"> Book Page</h2>
+<form>
+  <input class="form-control me-2" type="search"  style="margin-top: 100px;"[(ngModel)]="message" [ngModelOptions]="{standalone: true}"
+    placeholder="Arama Yap" aria-label="Search">
+    <br>
+  <button class="nes-btn is-success" style="width: 70px" type="submit" type="submit" (keyup.enter)="search()"
+    (click)="search()">Search</button>
+</form>
+<table class="table" id="f">
+  <thead>
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">Name</th>
+      <th scope="col">Subject</th>
+      <th scope="col">Actions</th>
+      <button type="button" class="btn btn-info float-end m-1" routerLink="/edit-book">New Book</button>
+
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of books">
+      <th scope="row">{{item.id}}</th>
+      <td>{{item.name}}</td>
+      <td>{{item.subject}}</td>
+      <td colspan="2">
+        <div class="btn-group">
+          <button class="btn btn-primary btn-sm m-1" type="button" routerLink="/detail-book/{{item.id}}">
+            Detail
+          </button>
+          <button class="btn btn-primary btn-sm m-1" type="button"
+            routerLink="/detail-book/{{item.id}}/{{item.name + ''+item.author}}">
+            Detail With Name
+          </button>
+          <button class="btn btn-warning btn-sm m-1" type="button" routerLink="/edit-book/{{item.id}}">
+            Edit
+          </button>
+          <button class="btn btn-danger btn-sm m-1" type="button" (click)="delBook(item.id)">
+            Delete
+          </button>
+        </div>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<ngx-loading [show]="loading" [config]="{ backdropBorderRadius: '3px' }"></ngx-loading>

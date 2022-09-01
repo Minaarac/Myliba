@@ -1,0 +1,70 @@
+<h2 id="p" class="text-center"> User Page</h2>
+<form>
+  <input class="form-control me-2" type="search" [(ngModel)]="message" [ngModelOptions]="{standalone: true}"
+    placeholder="Arama Yap" aria-label="Search">
+    <br>
+    <button class=" nes-btn is-success" style="width: 70px" type="submit" (keyup.enter)="search()" 
+    (click)="search()">Search</button>
+</form>
+<table class="table" id="f">
+  <thead>
+    <tr>
+
+      <th scope="col" (click)="getUserWithOrder()">Selected</th>
+      <th scope="col">ID</th>
+      <th scope="col">Name</th>
+      <th scope="col">Surname</th>
+      <th scope="col">Email</th>
+      <th scope="col">Actions</th>
+      <button type="button" class="nes-btn is-primary float-end m-1" routerLink="/edit-user">New User</button>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of users">
+      <input type="checkbox" (click)="selected(item)">
+      <th scope="row">{{item.id}}</th>
+      <td>{{item.name}}</td>
+      <td>{{item.surname}}</td>
+      <td>{{item.email}}</td>
+      <td colspan="2">
+        <div class="btn-group">
+          <button class="nes-btn is-success btn-sm m-1" type="button" routerLink="/detail-user/{{item.id}}">
+            Detail
+          </button>
+          <button class="nes-btn is-warning btn-sm m-1" type="button" routerLink="/edit-user/{{item.id}}">
+            Edit
+          </button>
+          <button class="nes-btn is-error btn-sm m-1" type="button" (click)="delUser(item.id)">
+            Delete
+          </button>
+        </div>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<table id="f" class="table" *ngIf="selectedUsers.length!=0">
+  <thead>
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">Name</th>
+      <th scope="col">Surname</th>
+      <th scope="col">Email</th>
+      <th>
+        <button type="button" class="nes-btn is-disabled float-end m-1" [disabled]="disabled" (click)="deleteSelected()">
+          Delete
+          Selected
+        </button>
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let user of selectedUsers">
+      <th scope="row">{{user.id}}</th>
+      <td>{{user.name}}</td>
+      <td>{{user.surname}}</td>
+      <td colspan="2">{{user.email}}</td>
+    </tr>
+  </tbody>
+</table>
+<ngx-loading [show]="loading" [config]="{ backdropBorderRadius: '3px' }"></ngx-loading>

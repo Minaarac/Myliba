@@ -1,0 +1,51 @@
+<h2 class="text-center" > </h2>
+<br>
+
+<button class=" nes-btn is-warning" routerLink="/edit-user/{{user.id}}">
+ Edit
+</button>
+<br>
+
+<div id="f" class="container text-center">
+    <div class="row">
+        <div class="col fw-bold">
+            Id
+        </div>
+        <div class="col">
+            {{user.id}}
+        </div>
+    </div>
+    <hr>
+
+    <div id="f" class="row">
+        <div class="col fw-bold">
+            Name
+        </div>
+        <div class="col">
+            {{user.name}}
+        </div>
+    </div>
+    <hr>
+
+    <div id="f" class="row">
+        <div class="col fw-bold">
+            Surname
+        </div>
+        <div class="col">
+            {{user.surname}}
+        </div>
+    </div>
+    <hr>
+
+    <div id="f" class="row">
+        <div class="col fw-bold">
+            Email
+        </div>
+        <div class="col">
+            {{user.email}}
+        </div>
+    </div>
+    <hr>
+</div>
+<ngx-loading [show]="loading" [config]="{ backdropBorderRadius: '3px' }"></ngx-loading>
+

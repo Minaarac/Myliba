@@ -1,0 +1,13 @@
+#p {
+    font-size: 2rem;
+}
+
+#p::first-letter{
+    font-size: 4rem;
+}
+
+#f{
+    font-size: medium;
+    font-style: oblique;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+}
